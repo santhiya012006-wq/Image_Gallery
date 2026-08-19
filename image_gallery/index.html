@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Image Gallery</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <h1>📸 My Image Gallery</h1>
+
+            <p>
+                Explore beautiful moments from nature, travel and wildlife
+            </p>
+
+        </div>
+
+        <!-- Theme Button -->
+        <button id="themeBtn" class="theme-btn">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search images..."
+            >
+
+        </div>
+
+
+        <!-- Category Filters -->
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                data-filter="all">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="nature">
+                Nature
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="travel">
+                Travel
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="animals">
+                Animals
+            </button>
+
+        </div>
+
+
+        <!-- ================= GALLERY ================= -->
+
+        <section class="gallery" id="gallery">
+
+
+            <!-- IMAGE 1 -->
+
+            <div
+                class="gallery-item"
+                data-category="nature"
+                data-title="Green Forest">
+
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=90"
+                    alt="Green Forest">
+
+                <div class="image-info">
+
+                    <h3>Green Forest</h3>
+
+                    <p>Nature</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 2 -->
+
+            <div
+                class="gallery-item"
+                data-category="nature"
+                data-title="Mountain Sunrise">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
+                    alt="Mountain Sunrise">
+
+                <div class="image-info">
+
+                    <h3>Mountain Sunrise</h3>
+
+                    <p>Nature</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 3 -->
+
+            <div
+                class="gallery-item"
+                data-category="nature"
+                data-title="Peaceful Lake">
+
+                <img
+                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=90"
+                    alt="Peaceful Lake">
+
+                <div class="image-info">
+
+                    <h3>Peaceful Lake</h3>
+
+                    <p>Nature</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 4 -->
+
+            <div
+                class="gallery-item"
+                data-category="travel"
+                data-title="Tropical Beach">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=90"
+                    alt="Tropical Beach">
+
+                <div class="image-info">
+
+                    <h3>Tropical Beach</h3>
+
+                    <p>Travel</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 5 -->
+
+            <div
+                class="gallery-item"
+                data-category="travel"
+                data-title="Mountain Adventure">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
+                    alt="Mountain Adventure">
+
+                <div class="image-info">
+
+                    <h3>Mountain Adventure</h3>
+
+                    <p>Travel</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 6 -->
+
+            <div
+                class="gallery-item"
+                data-category="travel"
+                data-title="Beautiful Destination">
+
+                <img
+                    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90"
+                    alt="Beautiful Destination">
+
+                <div class="image-info">
+
+                    <h3>Beautiful Destination</h3>
+
+                    <p>Travel</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 7 -->
+
+            <div
+                class="gallery-item"
+                data-category="animals"
+                data-title="Happy Dog">
+
+                <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=90"
+                    alt="Happy Dog">
+
+                <div class="image-info">
+
+                    <h3>Happy Dog</h3>
+
+                    <p>Animals</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 8 -->
+
+            <div
+                class="gallery-item"
+                data-category="animals"
+                data-title="Cute Cat">
+
+                <img
+                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=90"
+                    alt="Cute Cat">
+
+                <div class="image-info">
+
+                    <h3>Cute Cat</h3>
+
+                    <p>Animals</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 9 -->
+
+            <div
+                class="gallery-item"
+                data-category="animals"
+                data-title="Wild Elephant">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1000&q=90"
+                    alt="Wild Elephant">
+
+                <div class="image-info">
+
+                    <h3>Wild Elephant</h3>
+
+                    <p>Animals</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div
+        class="lightbox"
+        id="lightbox">
+
+
+        <!-- Top Controls -->
+
+        <div class="lightbox-top">
+
+            <div
+                class="image-counter"
+                id="imageCounter">
+                1 / 9
+            </div>
+
+            <button
+                class="lightbox-control"
+                id="zoomOutBtn"
+                title="Zoom Out">
+                −
+            </button>
+
+            <button
+                class="lightbox-control"
+                id="zoomInBtn"
+                title="Zoom In">
+                +
+            </button>
+
+            <button
+                class="lightbox-control"
+                id="fullscreenBtn"
+                title="Fullscreen">
+                ⛶
+            </button>
+
+            <button
+                class="lightbox-control close-btn"
+                id="closeBtn"
+                title="Close">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Previous -->
+
+        <button
+            class="nav-btn prev-btn"
+            id="prevBtn">
+            ❮
+        </button>
+
+
+        <!-- Image -->
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt="">
+
+            <div class="lightbox-caption">
+
+                <h2 id="lightboxTitle"></h2>
+
+                <p id="lightboxCategory"></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Next -->
+
+        <button
+            class="nav-btn next-btn"
+            id="nextBtn">
+            ❯
+        </button>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 My Image Gallery |
+            Designed using HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

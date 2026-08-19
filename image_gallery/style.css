@@ -1,0 +1,723 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    background: #f5f7fb;
+
+    color: #222;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 75px 20px;
+
+    margin: 5px;
+}
+
+.header h1 {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+.header-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   DARK MODE BUTTON
+========================================= */
+
+.theme-btn {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg) scale(1.1);
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 400px;
+
+    max-width: 90%;
+
+    padding: 14px 20px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    background: white;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.search-box input:focus {
+    border-color: #667eea;
+
+    box-shadow:
+        0 5px 25px rgba(102, 126, 234, 0.25);
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 25px 0 35px;
+}
+
+.filter-btn {
+    border: none;
+
+    padding: 11px 25px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #555;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+}
+
+.filter-btn.active {
+    background: #667eea;
+
+    color: white;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding-bottom: 70px;
+}
+
+.gallery-item {
+    position: relative;
+
+    height: 280px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+
+    filter: brightness(0.72);
+}
+
+
+/* =========================================
+   IMAGE INFO
+========================================= */
+
+.image-info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 30px 20px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.85)
+        );
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition: 0.4s;
+}
+
+.gallery-item:hover .image-info {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.image-info h3 {
+    font-size: 20px;
+}
+
+.image-info p {
+    font-size: 13px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   HIDDEN ITEMS
+========================================= */
+
+.gallery-item.hide {
+    display: none;
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(0, 0, 0, 0.96);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================
+   LIGHTBOX CONTENT
+========================================= */
+
+.lightbox-content {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 70px 80px 30px;
+}
+
+.lightbox-content img {
+    max-width: 90vw;
+
+    max-height: 78vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 60px rgba(0, 0, 0, 0.7);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.lightbox-caption {
+    text-align: center;
+
+    color: white;
+
+    margin-top: 15px;
+}
+
+.lightbox-caption h2 {
+    font-size: 25px;
+}
+
+.lightbox-caption p {
+    margin-top: 4px;
+
+    color: #bbb;
+}
+
+
+/* =========================================
+   LIGHTBOX TOP CONTROLS
+========================================= */
+
+.lightbox-top {
+    position: absolute;
+
+    top: 20px;
+
+    left: 25px;
+
+    right: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 10001;
+}
+
+.image-counter {
+    margin-right: auto;
+
+    color: white;
+
+    font-size: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    padding: 10px 16px;
+
+    border-radius: 25px;
+}
+
+.lightbox-control {
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.lightbox-control:hover {
+    background:
+        rgba(255, 255, 255, 0.3);
+
+    transform: scale(1.1);
+}
+
+.close-btn {
+    font-size: 30px;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-btn {
+    position: absolute;
+
+    top: 50%;
+
+    width: 60px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 10001;
+
+    transform: translateY(-50%);
+
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background:
+        rgba(255, 255, 255, 0.35);
+
+    transform:
+        translateY(-50%) scale(1.12);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+.lightbox.active .lightbox-content {
+    animation:
+        zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+
+    from {
+        transform: scale(0.8);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #111827;
+
+    color: #aaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-size: 14px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark {
+    background: #111827;
+
+    color: white;
+}
+
+body.dark .search-box input {
+    background: #1f2937;
+
+    color: white;
+
+    border-color: #374151;
+}
+
+body.dark .filter-btn {
+    background: #1f2937;
+
+    color: #ddd;
+}
+
+body.dark .filter-btn.active {
+    background: #667eea;
+
+    color: white;
+}
+
+body.dark .gallery-item {
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .header h1 {
+        font-size: 35px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 55px 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .gallery-item {
+        height: 270px;
+    }
+
+    .image-info {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+    .lightbox-content {
+        padding: 70px 15px 30px;
+    }
+
+    .lightbox-content img {
+        max-width: 94vw;
+
+        max-height: 70vh;
+    }
+
+    .nav-btn {
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 20px;
+    }
+
+    .prev-btn {
+        left: 8px;
+    }
+
+    .next-btn {
+        right: 8px;
+    }
+
+    .lightbox-top {
+        left: 10px;
+
+        right: 10px;
+
+        top: 10px;
+    }
+
+    .lightbox-control {
+        width: 40px;
+
+        height: 40px;
+    }
+
+}
